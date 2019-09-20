@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        	thb_match_formations_average
 // @namespace   	csi416_namespace
-// @description 	get average value for defense and attack in formation tabs in match reports
+// @description 	get average value for defense and attack in formation tabs in match reports and set tooltip to players match rating stars
 // @include     	*teamhb.org/index.php?page=match_formations&match_id=*
 // @version     	1
 // @grant       	none
