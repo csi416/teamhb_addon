@@ -567,7 +567,8 @@
 	function CalculateMinimumTalent() {
 		var retval;
 		
-		retval = parseInt(Bc);
+		retval = 11;
+		if (retval < parseInt(Bc)) retval = parseInt(Bc);
 		if (retval < parseInt(Pa)) retval = parseInt(Pa);
 		if (retval < parseInt(Sh)) retval = parseInt(Sh);
 		if (retval < parseInt(Bc)) retval = parseInt(Bc);
