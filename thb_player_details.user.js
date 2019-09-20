@@ -521,7 +521,17 @@
 		option3.text = "Fieldplayer";
 		positionSelectList.appendChild(option3);
 		
-		positionSelectList.children[2].setAttribute("selected", "selected");
+		var selected_idx;
+        	if (Position == "goalkeeper") {
+			selected_idx = 0;
+		}
+		else if (Position == "enter back") {
+			selected_idx = 1;
+		}
+		else {
+			selected_idx = 2;
+		}
+		positionSelectList.children[selected_idx].setAttribute("selected", "selected");
 		positionSelectList.onchange = RefreshNeedToMaxTalent;
 	}
 	
