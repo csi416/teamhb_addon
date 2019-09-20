@@ -497,8 +497,8 @@
 		elem.removeChild(elem.children[0]);
 		elem.appendChild(talentSelectList);
 		elem.appendChild(positionSelectList);
-		
-		for (var i = 11; i < 21; i++) {
+		var minTalent = CalculateMinimumTalent();
+		for (var i = minTalent; i < 21; i++) {
 			var option = document.createElement("option");
 			option.value = i;
 			option.text = i;
@@ -562,6 +562,23 @@
 		var str_nyuggerPhis = nyuggerPhis.toString();
 		
 		return str_talent_skills + "(" + str_nyuggerPhis + ")";
+	}
+	
+	function CalculateMinimumTalent() {
+		var retval;
+		
+		retval = parseInt(Bc);
+		if (retval < parseInt(Pa)) retval = parseInt(Pa);
+		if (retval < parseInt(Sh)) retval = parseInt(Sh);
+		if (retval < parseInt(Bc)) retval = parseInt(Bc);
+		if (retval < parseInt(Tq)) retval = parseInt(Tq);
+		if (retval < parseInt(Pm)) retval = parseInt(Pm);
+		if (retval < parseInt(Ma)) retval = parseInt(Ma);
+		if (retval < parseInt(Bl)) retval = parseInt(Bl);
+		if (retval < parseInt(Re)) retval = parseInt(Re);
+		if (retval < parseInt(Oo)) retval = parseInt(Oo);
+		
+		return retval;
 	}
 	
 })();
