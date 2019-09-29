@@ -27,7 +27,7 @@
 			var div_star_width = div_star.style.width;
 			div_star_width = parseInt(div_star_width.substring(0, div_star_width.length - 2));
 			var new_div_star_width = 70;
-			div_star.style.width = new_div_star_width + "x";
+			div_star.style.width = new_div_star_width + "px";
 			var new_left = div_star_left + (div_star_width - new_div_star_width) / 2;
 			div_star.style.left = new_left + "px";
 			var star_img = div_star.children[0];
