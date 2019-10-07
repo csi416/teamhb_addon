@@ -581,7 +581,7 @@
 		if (retval < parseInt(Bc)) retval = parseInt(Bc);
 		if (retval < parseInt(Pa)) retval = parseInt(Pa);
 		if (retval < parseInt(Sh)) retval = parseInt(Sh);
-		if (retval < parseInt(Ob)) retval = parseInt(Bc);
+		if (retval < parseInt(Ob)) retval = parseInt(Ob);
 		if (retval < parseInt(Tq)) retval = parseInt(Tq);
 		if (retval < parseInt(Pm)) retval = parseInt(Pm);
 		if (retval < parseInt(Ma)) retval = parseInt(Ma);
