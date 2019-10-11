@@ -11,9 +11,9 @@
     'use strict';
 	
 	var formation_0 = document.getElementById("formation_0");
-	var main_form = formation_0.parentNode;
 	var formation_1 = document.getElementById("formation_1");
 	var formation_2 = document.getElementById("formation_2");
+	var main_form = formation_0.parentNode;
 
 	SetFormationStars(formation_0);
 	SetFormationStars(formation_1);
@@ -26,8 +26,9 @@
 			div_star_left = parseInt(div_star_left.substring(0, div_star_left.length - 2));
 			var div_star_width = div_star.style.width;
 			div_star_width = parseInt(div_star_width.substring(0, div_star_width.length - 2));
-			div_star.style.width = "70px";
-			var new_left = div_star_left + (div_star_width - 70) / 2;
+			var new_div_star_width = 70;
+			div_star.style.width = new_div_star_width + "px";
+			var new_left = div_star_left + (div_star_width - new_div_star_width) / 2;
 			div_star.style.left = new_left + "px";
 			var star_img = div_star.children[0];
 			var src = star_img.getAttribute("src");
@@ -42,8 +43,9 @@
 			div_name_left = parseInt(div_name_left.substring(0, div_name_left.length - 2));
 			var div_name_width = div_name.style.width;
 			div_name_width = parseInt(div_name_width.substring(0, div_name_width.length - 2));
-			div_name.style.width = "140px";
-			new_left = div_name_left + (div_name_width - 140) / 2;
+			var new_div_name_width = 140;
+			div_name.style.width = new_div_name_width + "px";
+			new_left = div_name_left + (div_name_width - new_div_name_width) / 2;
 			div_name.style.left = new_left + "px";
 		}
 	}
