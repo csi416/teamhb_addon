@@ -267,51 +267,51 @@
 		
 		var need_to_max_talent = CalculateNeedToMaxTalent(talent, Position);
 		
-		var y = 0;
+		// 2019.09.09. 04:00:00
+		// month parameter is between 0..11, 0 -> January, ...8 -> September
+		var s27LastTrainingDate = new Date(2019, 8, 9, 4, 0);
+
+		var milliseconds = (new Date()).valueOf() - s27LastTrainingDate.valueOf();
+		var days = milliseconds / (1000 * 60 * 60 * 24);
+		var weeks = Math.floor(days / 7);
+		var weeksInActualSeason = weeks % 19;
+		var trainingsInActualSeason = 19 - weeksInActualSeason;
+		var trainingPointsInActualSeason = (parseInt(WE) + 50) * trainingsInActualSeason;
+
+		var remainingFullSeasons = 0;
 		if (Age < 28) {
 			// without this year
-			y = 27 - Age + 2.9;
+			remainingFullSeasons = 27 - Age + 2.9;
 		}
-		if (Age == 28) {
-			// average
-			//y = 0.4 + 0.8 + 0.6 + 0.4 + 0.2; // = 2.4;
+		else if (Age == 28) {
 			// widthout this year
-				//y = 0.8 + 0.6 + 0.4 + 0.2;
-			// width this year
-				y = 0.9 + 0.8 + 0.6 + 0.4 + 0.2; // = 2.4;
+			remainingFullSeasons = 0.8 + 0.6 + 0.4 + 0.2;
+			trainingPointsInActualSeason *= 0.9;
 		}
-		if (Age == 29) {
-			// average
-			//y = 0.4 + 0.6 + 0.4 + 0.2;
+		else if (Age == 29) {
 			// widthout this year
-				//y = 0.6 + 0.4 + 0.2;
-			// width this year
-				y = 0.8 + 0.6 + 0.4 + 0.2;
+			remainingFullSeasons = 0.6 + 0.4 + 0.2;
+			trainingPointsInActualSeason *= 0.8;
 		}
-		if (Age == 30) {
-			// average
-			//y = 0.3 + 0.4 + 0.2;
+		else if (Age == 30) {
 			// widthout this year
-				//y = 0.4 + 0.2;
-			// width this year
-				y = 0.6 + 0.4 + 0.2;
-		}
-		if (Age == 31) {
-			// average
-			//y = 0.2 + 0.2;
+			remainingFullSeasons = 0.4 + 0.2;
+			trainingPointsInActualSeason *= 0.6;
+			}
+		else if (Age == 31) {
 			// widthout this year
-				//y = 0.2;
-			// width this year
-				y = 0.4 + 0.2;
+			remainingFullSeasons = 0.2;
+			trainingPointsInActualSeason *= 0.4;
 		}
-		if (Age == 32) {
-			// width this year
-			y = 0.2;
+		else if (Age == 32) {
+			trainingPointsInActualSeason *= 0.2;
+			}
+		else if (Age > 32){
+			trainingPointsInActualSeason = 0;
 		}
-		y*=19;
-		//alert(y);
-		//korrigáció sérülés és training focus miatt
-		var from_training = Math.round(((parseInt(WE) + 50) * y) / 100);
+		remainingFullSeasons *= 19;
+		var trainingPointsInRemainingFullSeasons = (parseInt(WE) + 50) * remainingFullSeasons;
+		var from_training = Math.round((trainingPointsInRemainingFullSeasons / 100) + (trainingPointsInActualSeason / 100));
 		
 		var sum_of_all_skills = parseInt(Bc) + parseInt(Pa) + parseInt(Sh) + parseInt(Ob) + parseInt(Tq) + parseInt(Pm) + 
 			parseInt(Bl) + parseInt(Ma) + parseInt(Oo) + parseInt(Re) + parseInt(Ag) + parseInt(Sp) + 
