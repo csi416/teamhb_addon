@@ -311,7 +311,7 @@
 		}
 		remainingFullSeasons *= 19;
 		var trainingPointsInRemainingFullSeasons = (parseInt(WE) + 50) * remainingFullSeasons;
-		var from_training = Math.round((trainingPointsInRemainingFullSeasons / 100) + (trainingPointsInActualSeason / 100));
+		var from_training = Math.floor((trainingPointsInRemainingFullSeasons / 100) + (trainingPointsInActualSeason / 100));
 		
 		var sum_of_all_skills = parseInt(Bc) + parseInt(Pa) + parseInt(Sh) + parseInt(Ob) + parseInt(Tq) + parseInt(Pm) + 
 			parseInt(Bl) + parseInt(Ma) + parseInt(Oo) + parseInt(Re) + parseInt(Ag) + parseInt(Sp) + 
