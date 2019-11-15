@@ -319,6 +319,10 @@
 		
 		var td_SetOther01 = CreateTd1("Need to max talent", "#edeae1");
 		var td_SetOther02 = CreateTd2(need_to_max_talent, "#e8e6d4", "font_need_to_max_talent");
+		var talent_skills = GetNeedToMaxTalentByPosition(talent, Position);
+		var nyuggerPhis = GetNeedToMinPhysical();
+		var sum = talent_skills + nyuggerPhis;
+		td_SetOther02.setAttribute("title", sum);
 		var td_SetOther03 = CreateTd1("From training", "#edeae1");
 		var td_SetOther04 = CreateTd2(from_training, "#e8e6d4", "");
 		var td_SetOther05 = CreateTd1("Sum of all skills", "#edeae1");
@@ -543,7 +547,7 @@
 		font_need_to_max_talent.innerHTML = need_to_max_talent;
 	}
 	
-	function CalculateNeedToMaxTalent(talent, position) {
+	function GetNeedToMaxTalentByPosition(talent, position) {
 		// skills needed to max talent by position
 		var talent_skills;
 		if (position == "goalkeeper") {
@@ -555,7 +559,10 @@
 		else {
 			talent_skills = 7 * talent - Bc - Pa - Sh - Ob - Tq - Ma - Bl;
 		}
-		
+		return talent_skills;
+	}
+	
+	function GetNeedToMinPhysical() {
 		var nyuggerAg = 13 - Ag;
 		if (nyuggerAg < 0) nyuggerAg = 0;
 		var nyuggerSp = 13 - Sp;
@@ -568,6 +575,14 @@
 		if (nyuggerSm < 0) nyuggerSm = 0;
 		
 		var nyuggerPhis = nyuggerAg + nyuggerSp + nyuggerSt + nyuggerJu + nyuggerSm;
+		return nyuggerPhis;
+	}
+	
+	function CalculateNeedToMaxTalent(talent, position) {
+		var talent_skills = GetNeedToMaxTalentByPosition(talent, position);
+		
+		var nyuggerPhis = GetNeedToMinPhysical();
+		
 		var str_talent_skills = talent_skills.toString();
 		var str_nyuggerPhis = nyuggerPhis.toString();
 		
