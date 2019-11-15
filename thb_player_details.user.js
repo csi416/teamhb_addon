@@ -545,6 +545,10 @@
 		var position = document.getElementById("transfer_listed_player_position").value;
 		var need_to_max_talent = CalculateNeedToMaxTalent(talent, position);
 		font_need_to_max_talent.innerHTML = need_to_max_talent;
+		var talent_skills = GetNeedToMaxTalentByPosition(talent, position);
+		var nyuggerPhis = GetNeedToMinPhysical();
+		var sum = talent_skills + nyuggerPhis;
+		font_need_to_max_talent.parentNode.setAttribute("title", sum);
 	}
 	
 	function GetNeedToMaxTalentByPosition(talent, position) {
