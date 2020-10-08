@@ -36,7 +36,7 @@
 		tr_groupa.insertBefore(td_selectList, tr_groupa.children[2]);
 		tr_groupa.insertBefore(td_Label, tr_groupa.children[2]);
 		
-		var actualSeason = 27;
+		var actualSeason = 28;
 		for (var i = 1; i <= actualSeason; i++) {
 			var option = document.createElement("option");
 			option.value = i;
