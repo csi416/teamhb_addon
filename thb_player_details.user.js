@@ -269,9 +269,11 @@
 		
 		// 2019.09.09. 04:00:00
 		// month parameter is between 0..11, 0 -> January, ...8 -> September
-		var s27LastTrainingDate = new Date(2019, 8, 9, 4, 0);
+		// var s27LastTrainingDate = new Date(2019, 8, 9, 4, 0);
+		// 2024.06.10. 04:00:00
+        	var s41LastTrainingDate = new Date(2024, 5, 10, 4, 0);
 
-		var milliseconds = (new Date()).valueOf() - s27LastTrainingDate.valueOf();
+		var milliseconds = (new Date()).valueOf() - s41LastTrainingDate.valueOf();
 		var days = milliseconds / (1000 * 60 * 60 * 24);
 		var weeks = Math.floor(days / 7);
 		var weeksInActualSeason = weeks % 19;
