@@ -315,9 +315,21 @@
 		var trainingPointsInRemainingFullSeasons = (parseInt(WE) + 50) * remainingFullSeasons;
 		var from_training = Math.floor((trainingPointsInRemainingFullSeasons / 100) + (trainingPointsInActualSeason / 100));
 		
-		var sum_of_all_skills = parseInt(Bc) + parseInt(Pa) + parseInt(Sh) + parseInt(Ob) + parseInt(Tq) + parseInt(Pm) + 
-			parseInt(Bl) + parseInt(Ma) + parseInt(Oo) + parseInt(Re) + parseInt(Ag) + parseInt(Sp) + 
-			parseInt(St) + parseInt(Ju) + parseInt(Sm);
+		var sum_of_all_skills = 0;
+        	if (Position == "goalkeeper") {
+			// Tq + GK + Physical
+			sum_of_all_skills = parseInt(Tq) + parseInt(Oo) + parseInt(Re) + parseInt(Ag) + parseInt(Sp) + parseInt(St) + parseInt(Ju) + parseInt(Sm);
+		}
+		else if (Position == "enter back") {
+			// Attack + Playmaker + Defense + Physical
+			sum_of_all_skills = parseInt(Bc) + parseInt(Pa) + parseInt(Sh) + parseInt(Ob) + parseInt(Tq) + parseInt(Pm) + 
+				parseInt(Bl) + parseInt(Ma) + parseInt(Ag) + parseInt(Sp) + parseInt(St) + parseInt(Ju) + parseInt(Sm);
+		}
+		else {
+			// Attack + Tq + Defense + Physical
+			sum_of_all_skills = parseInt(Bc) + parseInt(Pa) + parseInt(Sh) + parseInt(Ob) + parseInt(Tq) + 
+				parseInt(Bl) + parseInt(Ma) + parseInt(Ag) + parseInt(Sp) + parseInt(St) + parseInt(Ju) + parseInt(Sm);
+		}
 		
 		var td_SetOther01 = CreateTd1("Need to max talent", "#edeae1");
 		var td_SetOther02 = CreateTd2(need_to_max_talent, "#e8e6d4", "font_need_to_max_talent");
