@@ -26,7 +26,8 @@
 			var div_star_left_int = parseInt(div_star_left.substring(0, div_star_left.length - 2));
 			var div_star_width = div_star.style.width;
 			var div_star_width_int = parseInt(div_star_width.substring(0, div_star_width.length - 2));
-			var new_div_star_width = 70;
+			// const for div star width: 70
+			const new_div_star_width = 70;
 			div_star.style.width = new_div_star_width + "px";
 			var new_left_star = div_star_left_int + (div_star_width_int - new_div_star_width) / 2;
 			div_star.style.left = new_left_star + "px";
@@ -43,7 +44,8 @@
 			var div_name_left_int = parseInt(div_name_left.substring(0, div_name_left.length - 2));
 			var div_name_width = div_name.style.width;
 			var div_name_width_int = parseInt(div_name_width.substring(0, div_name_width.length - 2));
-			var new_div_name_width = 140;
+			// const for div name width: 140
+			const new_div_name_width = 140;
 			div_name.style.width = new_div_name_width + "px";
 			var new_left_name = div_name_left_int + (div_name_width_int - new_div_name_width) / 2;
 			div_name.style.left = new_left_name + "px";
