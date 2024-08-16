@@ -84,11 +84,11 @@
 		var att = CalcAvgAtt(formation);
 		if (att != 0) {
 			var img_att = Math.round(att * 2);
-			var border_attack1 = CreateBorder(60, att, "http://www.teamhb.org/images/match/ratings/stars" + img_att + ".gif");
+			var border_attack1 = CreateBorder(60, att, img_att);
 			formation.appendChild(border_attack1);
 			var def = CalcAvgDef(formation);
 			var img_def = Math.round(def * 2);
-			var border_defense1 = CreateBorder(250, def, "http://www.teamhb.org/images/match/ratings/stars" + img_def + ".gif");
+			var border_defense1 = CreateBorder(250, def, img_def);
 			formation.appendChild(border_defense1);
 		}
 	}
@@ -125,7 +125,8 @@
 		var div_img_attack = document.createElement("div");
 		div_img_attack.setAttribute("align", "center");
 		var img_attack = document.createElement("img");
-		img_attack.setAttribute("src", img);
+		var img_src = "http://www.teamhb.org/images/match/ratings/stars" + img + ".gif"
+		img_attack.setAttribute("src", img_src);
 		img_attack.setAttribute("align", "center");
 		div_img_attack.appendChild(img_attack)
 		border.appendChild(div_attack);
