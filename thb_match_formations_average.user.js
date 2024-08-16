@@ -13,7 +13,6 @@
 	var formation_0 = document.getElementById("formation_0");
 	var formation_1 = document.getElementById("formation_1");
 	var formation_2 = document.getElementById("formation_2");
-	var main_form = formation_0.parentNode;
 
 	SetFormationStars(formation_0);
 	SetFormationStars(formation_1);
