@@ -23,13 +23,13 @@
 		for (var i = 3; i < formation.children.length; i = i + 3) {
 			var div_star = formation.children[i];
 			var div_star_left = div_star.style.left;
-			div_star_left = parseInt(div_star_left.substring(0, div_star_left.length - 2));
+			var div_star_left_int = parseInt(div_star_left.substring(0, div_star_left.length - 2));
 			var div_star_width = div_star.style.width;
-			div_star_width = parseInt(div_star_width.substring(0, div_star_width.length - 2));
+			var div_star_width_int = parseInt(div_star_width.substring(0, div_star_width.length - 2));
 			var new_div_star_width = 70;
 			div_star.style.width = new_div_star_width + "px";
-			var new_left = div_star_left + (div_star_width - new_div_star_width) / 2;
-			div_star.style.left = new_left + "px";
+			var new_left_star = div_star_left_int + (div_star_width_int - new_div_star_width) / 2;
+			div_star.style.left = new_left_star + "px";
 			var star_img = div_star.children[0];
 			var src = star_img.getAttribute("src");
 			var star = src.substring(26, 28);
@@ -40,13 +40,13 @@
 			star_img.setAttribute("title", fele);
 			var div_name = formation.children[i - 1];
 			var div_name_left = div_name.style.left;
-			div_name_left = parseInt(div_name_left.substring(0, div_name_left.length - 2));
+			var div_name_left_int = parseInt(div_name_left.substring(0, div_name_left.length - 2));
 			var div_name_width = div_name.style.width;
-			div_name_width = parseInt(div_name_width.substring(0, div_name_width.length - 2));
+			var div_name_width_int = parseInt(div_name_width.substring(0, div_name_width.length - 2));
 			var new_div_name_width = 140;
 			div_name.style.width = new_div_name_width + "px";
-			new_left = div_name_left + (div_name_width - new_div_name_width) / 2;
-			div_name.style.left = new_left + "px";
+			var new_left_name = div_name_left_int + (div_name_width_int - new_div_name_width) / 2;
+			div_name.style.left = new_left_name + "px";
 		}
 	}
 
