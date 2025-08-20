@@ -47,10 +47,8 @@
 		var str = window.location.search;
 		if (str.substring(0, 43) == "?page=home&subpage=wc&section=2&showseason=")	{
 			selectList.children[str.substring(43) - 1].setAttribute("selected", "selected");
-		}
-		else {
-			var idx = actualSeason - 1;
-			selectList.children[idx].setAttribute("selected", "selected");
+		} else {
+			selectList.children[actualSeason - 1].setAttribute("selected", "selected");
 		}
 	}
 	
